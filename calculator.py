@@ -29,13 +29,13 @@ def get_proper_action_type():
       logging.warning("Podałeś/aś niepoprawną wartość.")
   return action_type
 
-def get_result():
+def get_result(action, number_a, number_b):
   return actions.get(action)[1](number_a, number_b)
 
 action = get_proper_action_type()
 number_a = get_proper_value("Podaj składnik 1: ")
 number_b =  get_proper_value("Podaj składnik 2: ")
-result = get_result()
+result = get_result(action, number_a, number_b)
 
 logging.info(f"{actions.get(action)[0]} {number_a} i {number_b}")
 logging.info(f"Wynik to {result}")
